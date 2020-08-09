@@ -1,0 +1,6 @@
+framework module Pods_GameOfThronesArticlesApp_GameOfThronesArticlesAppUITests {
+  umbrella header "Pods-GameOfThronesArticlesApp-GameOfThronesArticlesAppUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

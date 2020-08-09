@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "ArticlesTableViewController.tableView(_:numberOfRowsInSection:):ArticlesTableViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "articles">
+            </PersistentString>
+            <PersistentString
+               value = "articles?.count">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "ArticleDetailViewController.articleModel.didset:ArticleDetailViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in ServiceManager.requestArticleDetails(articleId:completion:errorBlock:):ServiceManager.swift">
+      </ContextState>
+      <ContextState
+         contextName = "ArticlesTableViewController.onFilterFavorites():ArticlesTableViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "articlesBackup">
+            </PersistentString>
+            <PersistentString
+               value = "isFavoriteFiltered">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

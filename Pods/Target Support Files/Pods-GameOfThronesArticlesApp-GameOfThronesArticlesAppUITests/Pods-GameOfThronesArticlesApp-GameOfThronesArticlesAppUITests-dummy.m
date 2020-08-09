@@ -1,0 +1,5 @@
+#import <Foundation/Foundation.h>
+@interface PodsDummy_Pods_GameOfThronesArticlesApp_GameOfThronesArticlesAppUITests : NSObject
+@end
+@implementation PodsDummy_Pods_GameOfThronesArticlesApp_GameOfThronesArticlesAppUITests
+@end
