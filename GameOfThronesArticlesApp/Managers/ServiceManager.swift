@@ -49,7 +49,7 @@ class ServiceManager {
         }
     }
     
-    private func sendRequest(_ url: String, parameters: [String: String], completion: @escaping (Data?, Error?) -> Void) {
+    func sendRequest(_ url: String, parameters: [String: String], completion: @escaping (Data?, Error?) -> Void) {
         var components = URLComponents(string: url)!
         components.queryItems = parameters.map { (key, value) in
             URLQueryItem(name: key, value: value)

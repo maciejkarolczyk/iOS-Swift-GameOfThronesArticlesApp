@@ -1,0 +1,43 @@
+{
+  "basepath": "https://gameofthrones.fandom.com",
+  "items": [
+    {
+      "id": 2157,
+      "title": "Daenerys Targaryen",
+      "ns": 0,
+      "url": "/wiki/Daenerys_Targaryen",
+      "revision": {
+        "id": 433602,
+        "user": "OriginalOldOne",
+        "user_id": 27207026,
+        "timestamp": "1596790577"
+      },
+      "type": "article",
+      "abstract": "Queen Daenerys I Targaryen, also known as Daenerys Stormborn, and colloquially known as Dany...",
+      "thumbnail": "https://vignette.wikia.nocookie.net/gameofthrones/images/4/4f/Daenerys_Season_8.jpg/revision/latest/window-crop/width/200/x-offset/0/y-offset/0/window-width/1152/window-height/1152?cb=20190415212013",
+      "original_dimensions": {
+        "width": 1152,
+        "height": 1915
+      }
+    },
+    {
+      "id": 2123,
+      "title": "Jon Snow",
+      "ns": 0,
+      "url": "/wiki/Jon_Snow",
+      "revision": {
+        "id": 432455,
+        "user": "Ser Shield McShield",
+        "user_id": 27542229,
+        "timestamp": "1595287680"
+      },
+      "type": "article",
+      "abstract": "Jon Snow, born Aegon Targaryen, is the son of Lyanna Stark and Rhaegar Targaryen, the late...",
+      "thumbnail": "https://vignette.wikia.nocookie.net/gameofthrones/images/d/d0/JonSnow8x06.PNG/revision/latest/window-crop/width/200/x-offset/0/y-offset/0/window-width/343/window-height/343?cb=20190714094440",
+      "original_dimensions": {
+        "width": 343,
+        "height": 494
+      }
+    }
+  ]
+}
