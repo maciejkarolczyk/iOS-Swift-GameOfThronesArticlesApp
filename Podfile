@@ -8,13 +8,4 @@ pod 'Kingfisher', '~> 5.0'
 
   # Pods for GameOfThronesArticlesApp
 
-  target 'GameOfThronesArticlesAppTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
-  target 'GameOfThronesArticlesAppUITests' do
-    # Pods for testing
-  end
-
 end

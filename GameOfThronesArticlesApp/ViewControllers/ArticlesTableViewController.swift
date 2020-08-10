@@ -86,7 +86,7 @@ class ArticlesTableViewController: BaseViewController {
                 context.viewController(forKey: UITransitionContextViewControllerKey.from)
             }, completion: { context in
                 let offset = self.tableView.contentOffset.y;
-                guard let visibleRows = self.visibleRows else {return}
+                guard let visibleRows = self.visibleRows, visibleRows.count > 0 else {return}
                 self.tableView.scrollToRow(at: offset <= 0 ? visibleRows[0] : visibleRows[1], at: .top, animated: false)
             })
     }
