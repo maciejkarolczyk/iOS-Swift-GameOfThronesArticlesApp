@@ -71,7 +71,7 @@ class ArticleTableViewCell: UITableViewCell {
         
         favoriteButton.topAnchor.constraint(equalTo: thumbnail.topAnchor).isActive = true
         favoriteButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8).isActive = true
-        favoriteButton.widthAnchor.constraint(equalToConstant: 20).isActive = true
+        favoriteButton.widthAnchor.constraint(equalToConstant: 30).isActive = true
         favoriteButton.heightAnchor.constraint(equalTo: favoriteButton.widthAnchor).isActive = true
         
     }

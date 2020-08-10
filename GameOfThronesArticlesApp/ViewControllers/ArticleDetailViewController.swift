@@ -38,7 +38,7 @@ class ArticleDetailViewController: BaseViewController {
         scroll.showsVerticalScrollIndicator = false
         return scroll
     }()
-    let image:UIImageView = {
+    let imageView:UIImageView = {
         let image = UIImageView()
         image.contentMode = .scaleAspectFit
         image.translatesAutoresizingMaskIntoConstraints = false
@@ -93,7 +93,7 @@ class ArticleDetailViewController: BaseViewController {
         
         view.addSubview(scrollView)
         scrollView.addSubview(contentView)
-        contentView.addSubview(image)
+        contentView.addSubview(imageView)
         contentView.addSubview(titleLabel)
         contentView.addSubview(abstractTextField)
         contentView.addSubview(urlTextView)
@@ -112,13 +112,14 @@ class ArticleDetailViewController: BaseViewController {
         height.priority = .defaultLow
         height.isActive = true
         
-        image.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16).isActive = true
-        image.leadingAnchor.constraint(greaterThanOrEqualTo: contentView.leadingAnchor, constant: 16).isActive = true
-        image.trailingAnchor.constraint(greaterThanOrEqualTo: contentView.trailingAnchor, constant:-16).isActive = true
-        image.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
-        image.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 0.3).isActive = true
+        imageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16).isActive = true
+        imageView.leadingAnchor.constraint(greaterThanOrEqualTo: contentView.leadingAnchor, constant: 16).isActive = true
+        imageView.trailingAnchor.constraint(greaterThanOrEqualTo: contentView.trailingAnchor, constant:-16).isActive = true
+        imageView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
+        imageView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.3).isActive = true
+        imageView.image = #imageLiteral(resourceName: "placeholder_image")
         
-        titleLabel.topAnchor.constraint(equalTo: image.bottomAnchor, constant: 16).isActive = true
+        titleLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 16).isActive = true
         titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
         titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
         titleLabel.heightAnchor.constraint(equalToConstant: 20).isActive = true
@@ -136,10 +137,18 @@ class ArticleDetailViewController: BaseViewController {
     }
     
     func setupWithDataFromModel() {
+        guard let article = self.detailsModel else {return}
+        let url = article.thumbnail
+
+        DispatchQueue.global().async {
+            let data = try? Data(contentsOf: url)
+            DispatchQueue.main.async {
+                self.imageView.image = UIImage(data: data!)
+                
+            }
+        }
+        
         DispatchQueue.main.async {
-            guard let article = self.detailsModel else {return}
-            self.image.kf.indicatorType = .activity
-            self.image.kf.setImage(with: article.thumbnail, placeholder: #imageLiteral(resourceName: "placeholder_image"))
             self.titleLabel.text = article.title
             self.abstractTextField.text = article.abstract
             self.abstractTextField.translatesAutoresizingMaskIntoConstraints = true

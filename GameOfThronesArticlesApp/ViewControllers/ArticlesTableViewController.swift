@@ -10,8 +10,8 @@ import UIKit
 
 class ArticlesTableViewController: BaseViewController {
     
+    var visibleRows:[IndexPath]?
     var isFavoriteFiltered: Bool = false
-    var favoritesArray: Array<Int> = []
     var expandedIndexSet: IndexSet = []
     var articlesBackup:[Article]?
     var articles:[Article]? {
@@ -78,6 +78,17 @@ class ArticlesTableViewController: BaseViewController {
         } else {
             articles = articlesBackup
         }
+    }
+    
+    override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
+        coordinator.animate(alongsideTransition: { context in
+                self.visibleRows = self.tableView.indexPathsForVisibleRows
+                context.viewController(forKey: UITransitionContextViewControllerKey.from)
+            }, completion: { context in
+                let offset = self.tableView.contentOffset.y;
+                guard let visibleRows = self.visibleRows else {return}
+                self.tableView.scrollToRow(at: offset <= 0 ? visibleRows[0] : visibleRows[1], at: .top, animated: false)
+            })
     }
     
     @objc func handleLongPress(longPressGesture: UILongPressGestureRecognizer) {
