@@ -11,12 +11,22 @@ import UIKit
 
 class BaseViewController: UIViewController {
     
+    var networkLayer : NetworkLayer
     let loading: UIActivityIndicatorView = {
         let loading = UIActivityIndicatorView()
         loading.translatesAutoresizingMaskIntoConstraints = false
         loading.hidesWhenStopped = true
         return loading
     }()
+    
+    init(networkLayer: NetworkLayer = NetworkLayer()) {
+        self.networkLayer = networkLayer
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		099C51CA24EC0F28009D1EB8 /* NetworkLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099C51C924EC0F28009D1EB8 /* NetworkLayer.swift */; };
 		09B62ED524DC033200E78758 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B62ED424DC033200E78758 /* AppDelegate.swift */; };
 		09B62ED724DC033200E78758 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B62ED624DC033200E78758 /* SceneDelegate.swift */; };
 		09B62ED924DC033200E78758 /* ArticlesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B62ED824DC033200E78758 /* ArticlesTableViewController.swift */; };
@@ -14,7 +15,6 @@
 		09B62EE124DC033900E78758 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09B62EDF24DC033900E78758 /* LaunchScreen.storyboard */; };
 		09B62EF724DC033900E78758 /* GameOfThronesArticlesAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B62EF624DC033900E78758 /* GameOfThronesArticlesAppUITests.swift */; };
 		09B62F0624DC0B8100E78758 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B62F0524DC0B8100E78758 /* Constants.swift */; };
-		09B62F0924DC14F200E78758 /* ServiceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B62F0824DC14F200E78758 /* ServiceManager.swift */; };
 		09B62F0E24DC36EF00E78758 /* ArticlesResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B62F0D24DC36EF00E78758 /* ArticlesResponseModel.swift */; };
 		09B62F1124DC711000E78758 /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B62F1024DC711000E78758 /* ArticleTableViewCell.swift */; };
 		09B62F1324DD9A0F00E78758 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B62F1224DD9A0F00E78758 /* Toast.swift */; };
@@ -54,6 +54,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		099C51C924EC0F28009D1EB8 /* NetworkLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLayer.swift; sourceTree = "<group>"; };
 		09B62ED124DC033200E78758 /* GameOfThronesArticlesApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GameOfThronesArticlesApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09B62ED424DC033200E78758 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		09B62ED624DC033200E78758 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,7 +66,6 @@
 		09B62EF624DC033900E78758 /* GameOfThronesArticlesAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOfThronesArticlesAppUITests.swift; sourceTree = "<group>"; };
 		09B62EF824DC033900E78758 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		09B62F0524DC0B8100E78758 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		09B62F0824DC14F200E78758 /* ServiceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceManager.swift; sourceTree = "<group>"; };
 		09B62F0D24DC36EF00E78758 /* ArticlesResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesResponseModel.swift; sourceTree = "<group>"; };
 		09B62F1024DC711000E78758 /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
 		09B62F1224DD9A0F00E78758 /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
@@ -185,7 +185,7 @@
 		09B62F0724DC14DC00E78758 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				09B62F0824DC14F200E78758 /* ServiceManager.swift */,
+				099C51C924EC0F28009D1EB8 /* NetworkLayer.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -466,12 +466,12 @@
 				09B62ED924DC033200E78758 /* ArticlesTableViewController.swift in Sources */,
 				09B62ED524DC033200E78758 /* AppDelegate.swift in Sources */,
 				09B62ED724DC033200E78758 /* SceneDelegate.swift in Sources */,
+				099C51CA24EC0F28009D1EB8 /* NetworkLayer.swift in Sources */,
 				09B62F1124DC711000E78758 /* ArticleTableViewCell.swift in Sources */,
 				09B62F0E24DC36EF00E78758 /* ArticlesResponseModel.swift in Sources */,
 				09B62F3B24DEE93700E78758 /* BaseViewController.swift in Sources */,
 				09B62F0624DC0B8100E78758 /* Constants.swift in Sources */,
 				09B62F1324DD9A0F00E78758 /* Toast.swift in Sources */,
-				09B62F0924DC14F200E78758 /* ServiceManager.swift in Sources */,
 				09B62F1524DD9D9C00E78758 /* TableViewExtension.swift in Sources */,
 				09B62F3724DED6DE00E78758 /* ArticleDetailViewController.swift in Sources */,
 				09B62F3924DEE45D00E78758 /* ArticleDetailsResponseModel.swift in Sources */,

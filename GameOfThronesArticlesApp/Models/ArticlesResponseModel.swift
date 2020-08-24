@@ -57,15 +57,15 @@ extension Article: Decodable {
 }
 
 extension ArticlesResponseModel: Decodable {
-  enum MyStructKeys: String, CodingKey { // declaring our keys
+  enum MyStructKeys: String, CodingKey {
     case basepath = "basepath"
     case articles = "items"
   }
   
   init(from decoder: Decoder) throws {
-    let container = try decoder.container(keyedBy: MyStructKeys.self) // defining our (keyed) container
-    let basepath: String = try container.decode(String.self, forKey: .basepath) // extracting the data
-    let articles: [Article] = try container.decode([Article].self, forKey: .articles) // extracting the data
+    let container = try decoder.container(keyedBy: MyStructKeys.self)
+    let basepath: String = try container.decode(String.self, forKey: .basepath)
+    let articles: [Article] = try container.decode([Article].self, forKey: .articles)
     
     self.init(basepath: basepath, articles: articles)
   }

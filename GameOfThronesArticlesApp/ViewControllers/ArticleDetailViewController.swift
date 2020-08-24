@@ -75,14 +75,14 @@ class ArticleDetailViewController: BaseViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "favorite_empty"), style: .plain, target: self, action: #selector(onFavoriteButton))
         
         if let articleId = articleId {
-            ServiceManager.sharedInstance.requestArticleDetails(articleId: articleId, completion: { article in
+            networkLayer.getData(urlString: Constants.articleDetailsEndpoint, parameters: Constants.getArticleDetailsParameters(articleId), successHandler: { (response:ArticleDetailsResponseModel) in
+                let articles = response.articles
+                let article = articles[String(articleId)]
                 self.detailsModel = article
                 self.changeLoading(false)
             }) { errorString in
                 self.changeLoading(false)
-                DispatchQueue.main.async {
-                    Toast.show(message: errorString, controller: self)
-                }
+                print(errorString)
             }
         }
     }

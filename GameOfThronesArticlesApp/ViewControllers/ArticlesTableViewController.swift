@@ -31,7 +31,6 @@ class ArticlesTableViewController: BaseViewController {
         return table
     }()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -40,13 +39,22 @@ class ArticlesTableViewController: BaseViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "favorite_empty"), style: .plain, target: self, action: #selector(onFilterFavorites))
         
         // Request Articles
-        ServiceManager.sharedInstance.requestTopArticles(completion: { articles in
+        networkLayer.getData(urlString: Constants.topArticlesEndpoint, parameters: Constants.getTopArticlesParameters(), successHandler: { (response:ArticlesResponseModel) in
+            let articles = response.articles
             self.articles = articles
             self.changeLoading(false)
-        }, errorBlock: { errorString in
+        }) { errorString in
             self.changeLoading(false)
             print(errorString)
-        })
+        }
+        
+//        ServiceManager.sharedInstance.requestTopArticles(completion: { articles in
+//            self.articles = articles
+//            self.changeLoading(false)
+//        }, errorBlock: { errorString in
+//            self.changeLoading(false)
+//            print(errorString)
+//        })
     }
     
     override func setupLayout() {
